@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>银龄智伴 - AI老年陪伴助手</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>🌿 银龄智伴</h1>
+            <p class="subtitle">您的AI陪伴助手</p>
+            <button class="btn-new-chat" onclick="newChat()" title="新对话">+ 新对话</button>
+        </header>
+
+        <!-- Chat area -->
+        <main class="chat-area" id="chatArea">
+            <div class="welcome-message">
+                <div class="welcome-icon">🌸</div>
+                <h2>您好！我是小龄</h2>
+                <p>可以陪您聊聊天、说说心里话</p>
+                <p>也可以问我健康方面的问题</p>
+                <div class="quick-actions">
+                    <button onclick="sendQuick('今天天气真好，想出去走走')">☀️ 聊聊天气</button>
+                    <button onclick="sendQuick('高血压平时要注意什么？')">💊 健康知识</button>
+                    <button onclick="sendQuick('最近睡不太好，怎么办？')">😴 失眠调理</button>
+                    <button onclick="sendQuick('老年人每天运动多久合适？')">🚶 运动建议</button>
+                </div>
+            </div>
+        </main>
+
+        <!-- Input area -->
+        <footer class="input-area">
+            <div class="input-row">
+                <input
+                    type="text"
+                    id="messageInput"
+                    placeholder="在这里输入您想说的话..."
+                    autocomplete="off"
+                    onkeydown="handleKeyDown(event)"
+                />
+                <button class="btn-send" id="sendBtn" onclick="sendMessage()">发送</button>
+            </div>
+            <p class="input-hint">按 Enter 发送消息</p>
+        </footer>
+    </div>
+
+    <!-- Loading overlay -->
+    <div class="loading" id="loading" style="display:none;">
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+        <div class="loading-dot"></div>
+    </div>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
